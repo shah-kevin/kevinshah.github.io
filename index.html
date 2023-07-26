@@ -1,60 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Kevin Shah - CV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Shah - Portfolio</title>
+  <!-- Google Fonts - Montserrat -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+
+<script src="jquery.js">
+
+</script>
+<script>
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var target = $(target);
+          target.focus();
+          if (target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+  
+</script>
 </head>
+
 <body>
-    <header>
-        <img src="banner-image.jpg" alt="Banner Image">
-        <h1>KEVIN SHAH</h1>
-        <p>Email: kev22nov@gmail.com | +1-617-935-6129 | <a href="https://www.linkedin.com/in/kevinshah22/">LinkedIn</a></p>
-    </header>
-
-    <main>
-        <section>
-            <h2>PROFESSIONAL EXPERIENCE</h2>
+    <header id="header" class="fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+    
+          <h1 class="logo me-auto me-lg-0"><a href="index.html">Kevin Shah</a></h1>
+          
+    
+          <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li>
+              <li><a class="active" href="index.html">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#journey">Journey</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+    
+          <div class="header-social-links">
+            <a href="https://github.com/shah-kevin" class="github"><i class="bi bi-github"></i></a>
+            <a href="https://www.facebook.com/kevin22november" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/kev22nov/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/kevinshah22/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+          </div>
+    
+        </div>
+    
+      </header>
+<section id="about">
+    <div class="banner" >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6" style="padding-bottom: 5%">
+                    <!-- <h1><b>Kevin Shah </b></h1> -->
+                    <p style="text-align: left;">Experienced Business Intelligence Analyst with expertise in SQL, Python, and data analytics. Proven track record of optimizing processes, developing comprehensive dashboards, and delivering valuable insights. Skilled in supply chain analysis, statistical modeling, and query optimization. Strong problem-solving abilities and a passion for leveraging technology to drive informed decision-making. Master's degree in Analytics with a focus on statistical modeling. Collaborative team player with exceptional communication skills and a dedication to achieving exceptional results.</p>
+                    <button class="btn btn-warning" href="https://bit.ly/3r5ou1c"> <a href="https://bit.ly/3r5ou1c">Download Resume</a></button>
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="images/banner-image.png" alt="" style="padding-bottom: 10px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="journey">
+<div class="container" id = "Journey">
+    <div class="timeline">
+            <div class="timeline-row">
+                <div class="timeline-time">
+                    Apr 2021 – Apr 2023
+                </div>
+                <div class="timeline-content">
+                    <div class="thumbs">
+                    <i class="icon-attachment">
+                    <img class="img-fluid rounded" src="images/ashley icon.png"> </i>
+                </div>
                     <h3>Ashley Furniture Industries</h3>
-                    <p>Apr 2021 - Apr 2023</p>
-                    <p>Role: Business Intelligence Analyst | Location: Tampa, FL</p>
-                    <ul>
-                        <li>Improved shipping container tracking dashboard with carrier contract-based per-diem calculations, item visibility, and purchase order lifecycle exploration. Identified COVID-19-related halts, resulting in 55% reductions in daily costs.</li>
-                        <li>Developed an E-Commerce order journey app with On-Time and In-Full deliveries, Y-o-Y performances, and backorder management for the operations team.</li>
-                        <!-- Add the remaining bullet points -->
-                    </ul>
-                </li>
-                <!-- Add more experience sections -->
-            </ul>
-        </section>
+                    <h4>Business Intelligence Analyst</h4>
+                    <h5>Location: Tampa, Florida </h5>
+                    <p> <li>	Improved shipping container tracking dashboard with carrier contract-based per-diem calculations, resulting in 55% reductions in daily costs</li>
+                        <li>	Developed an E-Commerce order journey app with On-Time and In-Full deliveries, Y-o-Y performances, and backorder management for the operations team</li>
+                        <li>	Leveraged statistical modeling techniques, Predicted container transfer times between warehouses using statistical modeling techniques</li>
+                        <li>	Refactored PySpark-Databricks code to utilize object-oriented programming principles, enabling seamless integration with Python-based Dash applications</li>
+                        <li>	Created manufacturing metrics report with PPLH, True Efficiency, and Downtime hours to identify process improvements and provide numeric efficiency values for leadership</li>
+                        <li>	Produced a comprehensive report on MRO equipment prices, enabling Vietnam teams to compare costs and make informed vendor selections across two facilities</li> </p>
 
-        <section>
-            <h2>TECHNICAL SKILLS</h2>
-            <ul>
-                <li>DB & Programming Languages: MSSQL, Oracle SQL, Python, R</li>
-                <li>Statistical Methods: Time-Series Analysis, Linear Programming, p-value testing, z-test, t-test</li>
-                <li>Big Data Technologies: Databricks, Big Query, Hadoop HDFS, Hive, Sqoop, Spark</li>
-                <li>Visualization Tools: Power BI, Looker, Tableau, Python Dash</li>
-                <li>Machine Learning Algorithms: Linear & Logistic Regression, Decision Trees, Random Forest, SVM, Naive Bayes, Clustering</li>
-            </ul>
-        </section>
+                    <div class="">
+                        <span class="badge badge-pill">SQL</span>
+                        <span class="badge badge-pill">PowerBI</span>
+                        <span class="badge badge-pill">Python</span>
+                        <span class="badge badge-pill">Tableau</span>
+                        <span class="badge badge-pill">Pyspark</span>
+                        <span class="badge badge-pill">DataBricks</span>
+                        <span class="badge badge-pill">Azure</span>
+                        <span class="badge badge-pill">Project Documentation</span>
+                        <span class="badge badge-pill">Process Mapping</span>
+                        <span class="badge badge-pill">leadership</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="timeline-row">
+                <div class="timeline-time">
+                    Aug 2020 - Mar 2021
+                </div>
+                <div class="timeline-content">
+                    <div class="thumbs">
+                        <i class="icon-attachment">
+                        <img class="img-fluid rounded" src="images/wayfair-icon.png"> </i>
+                    </div>
+                        <h3>Wayfair</h3>
+                        <h4>3D Operations Analyst</h4>
+                        <h5>Location: Boston, Massachusetts </h5>
+                    <p><li>Designed, developed, and maintained M-o-M invoices using Python scripts for a pay-as-you-go pricing strategy, resulting in $331k in invoicing. Created accompanying dashboards for easy visualization and monitoring of invoicing metrics</li>
+                        <li>Optimized Image Recoloring pipelines using improved SQL scripts, ensuring uninterrupted requests and improving overall performance as part of continuous improvement efforts</li>
 
-        <section>
-            <h2>EDUCATION</h2>
-            <p>Master of Science in Analytics</p>
-            <p>Northeastern University, Boston | Majors: Statistical Modelling in Data Analytics</p>
-            <!-- Add more education details -->
-        </section>
+                    </p>
 
-        <section>
-            <h2>PROJECTS</h2>
-            <p>Predicting Diabetes Patient Readmission | Northeastern University | Predictive Analytics</p>
-            <p>Created 6 classification models using medical records to identify factors contributing to patient readmission rates, oversampling with SMOTE to reduce sample bias, and achieving 96% accuracy with the best-performing model out of 6 tested.</p>
-            <!-- Add more project details -->
-        </section>
-    </main>
+                    <div class="">
+                        <span class="badge badge-pill">SQL</span>
+                        <span class="badge badge-pill">Python</span>
+                        <span class="badge badge-pill">BigQuery</span>
+                        <span class="badge badge-pill">Looker Studio</span>
+                        <span class="badge badge-pill">Communication</span>
+                        <span class="badge badge-pill">Project Management</span>
+                        <span class="badge badge-pill">leadership</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="timeline-row">
+                <div class="timeline-time">
+                    Sep 2018 – Apr 2020
+                </div>
+                <div class="timeline-content">
+                    <div class="thumbs">
+                    <i class="icon-attachment">
+                        <img class="img-fluid rounded" src="images/northeastern-icon.png">
+                    </i>
+                </div>
+                    <h4>Masters Degree</h4>
+                    <h4>Northeastern University</h4>
+                    <p>Majored in Statistical Modelling in Data Analytics</p>
+                    <p>Coursework: Probability and Statistics, Data Mining, Predictive Analytics, Data-Driven Decision making</p>
+                    <p>Was appointed as Graduate teaching Assitant for the subject Intermediate Analytics</p>
+                    <p><li>Assisted Professor Dr. Tenglong Li in students weekly participation, grading assignments, and providing feedback</li>
+                    <li>Conducted lab sessions for Python and R explaining statistical modeling concepts for a class size of 45 students</li></p>
+                    <div>
+                        <span class="badge badge-pill">R</span>
+                        <span class="badge badge-pill">python</span>
+                        <span class="badge badge-pill">Excel</span>
+                        <span class="badge badge-pill">Statistical Modelling</span>
+                        <span class="badge badge-pill">ML</span>
+                        <span class="badge badge-pill">Tableau</span>
+                        <span class="badge badge-pill">Predictive Analytics</span>
+                        <span class="badge badge-pill">Mentorship</span>
+                        <span class="badge badge-pill">Big Query</span>
+                        <span class="badge badge-pill">Looker</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="timeline-row">
+                <div class="timeline-time">
+                    Nov 2016 – Jul 2018
+                </div>
+                <div class="timeline-content">
+                    <div class="thumbs">
+                    <i class="icon-attachment">
+                        <img class="img-fluid rounded" src="images/accenture icon.png">
+                    </i>
+                </div>
+                <h3>Accenture</h3>
+                <h5>Business Application Development Analyst</h5>
+                <h5>Location: Mumbai, India </h5>
+            <p><li>Created a 360-degree leadership dashboard to highlight transactions and metrics that assist leadership in decision making</li>
+                <li>Implemented AI-Assisted Transaction entry in Peoplesoft Purchasing module reducing entry time by 30%</li>
+                <li>Optimized SQL queries improving performance by 70% by indexing and reforming optimized statements</li>
+                <li>Developed pages, components, App engines for validating and error logging data in the General Ledger Module</li>
+                <li>Engineered Security Automation to manage permissions and roles in PeopleSoft improving error handling by 92% </li></p>
+                    <div>
+                        <span class="badge badge-pill">PeopleSoft</span>
+                        <span class="badge badge-pill">Peopletools</span>
+                        <span class="badge badge-pill">Javascript</span>
+                        <span class="badge badge-pill">SQL</span>
+                        <span class="badge badge-pill">HTML5</span>
+                        <span class="badge badge-pill">CSS</span>
+                        <span class="badge badge-pill">iscripts</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="timeline-row">
+                <div class="timeline-time">
+                    May 2016 – Nov 2016 
+                </div>
+                <div class="timeline-content">
+                    <div class="thumbs">
+                        <i class="icon-attachment">
+                            <img class="img-fluid rounded" src="images/pipes.jpeg">
+                        </i>
+                    </div>
+                    <h4>Pipes App</h4>
+                    <h5>Software Operations Intern</h5>
+                    <h5>Location: Mumbai, India </h5>
+                    <p><li>Implemented news summarization algorithm using PHP to pull and clean articles from 200+ different news sources</li></p>
+                    <div>
+                        <span class="badge badge-pill">php</span>
+                        <span class="badge badge-pill">Operations</span>
+                        <span class="badge badge-pill">SQL</span>
+                        <span class="badge badge-pill">Communications</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="timeline-row">
+                <div class="timeline-time">
+                    Aug 2012 – May 2016
+                </div>
+                <div class="timeline-content">
+                    <div class="thumbs">
+                        <i class="icon-attachment">
+                            <img class="img-fluid rounded" src="images/mu-icon.png">
+                        </i>
+                    </div>
+                    <h4>Bachelor Degree</h4>
+                    <h4>Mumbai University</h4>
+                    <p>Majored in Computer Engineering</p>
+                    <p>Coursework: Artificial Intelligence, Algorithms, Object-Oriented Programming, RDBMS</p>
+                    
+                    <div class="">
+                        <span class="badge badge-pill">SQL</span>
+                        <span class="badge badge-pill">Java</span>
+                        <span class="badge badge-pill">Theoretical Computer Science</span>
+                        <span class="badge badge-pill">Algorithms</span>
+                        <span class="badge badge-pill">Debates</span>
+                        <span class="badge badge-pill">Application Development</span>
+                        <span class="badge badge-pill">AI</span>
+                        <span class="badge badge-pill">SCRUM</span>
+                        <span class="badge badge-pill">Agile</span>
+                        <span class="badge badge-pill">Mathematics</span>
+                    </div>
+                </div>
+            </div>
+    
+   
+        </div>
+    </div>
+</section>
+<section id = "Visualizations">
+    <h3>Here are some examples of Visualization projects</h3>
+    <iframe title="Medical Supply Chain Dashboard New" width="1000" height="630" src="https://app.powerbi.com/view?r=eyJrIjoiOGM2YjJhZjktMzI5Zi00ZGNmLTk5Y2YtNWY3MGViZTAwODg1IiwidCI6ImE4ZWVjMjgxLWFhYTMtNGRhZS1hYzliLTlhMzk4YjkyMTVlNyIsImMiOjN9" frameborder="0" allowFullScreen="true"></iframe>
+</section>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
